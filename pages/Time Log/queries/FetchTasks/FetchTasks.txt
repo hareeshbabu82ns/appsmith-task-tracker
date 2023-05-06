@@ -1,0 +1,18 @@
+{
+	tasks {
+		id
+		title
+		description
+		status
+		date_created
+	}
+	__type(name:"tasks"){
+		fields{
+			name
+			type {
+				name
+				kind
+			}
+		}
+	}
+}

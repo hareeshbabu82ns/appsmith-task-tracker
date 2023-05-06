@@ -1,0 +1,1 @@
+DELETE FROM public."time_log" WHERE  id={{List1.selectedItem.id}}

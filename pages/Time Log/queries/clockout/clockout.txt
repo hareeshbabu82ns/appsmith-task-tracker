@@ -1,0 +1,5 @@
+UPDATE public."time_log" SET
+    
+    "time_end" = CURRENT_TIMESTAMP
+
+  WHERE "user_id" = {{Number(lst_user.selectedItem.id)}}::varchar and task={{List1.selectedItem.task}}::varchar; 

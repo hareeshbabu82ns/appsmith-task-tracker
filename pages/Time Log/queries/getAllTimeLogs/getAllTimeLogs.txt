@@ -1,0 +1,2 @@
+SELECT * FROM public."time_log" 
+LIMIT 100

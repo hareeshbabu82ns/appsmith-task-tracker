@@ -1,0 +1,2 @@
+INSERT INTO time_log ("user_id", "task", "time_start")
+  VALUES ({{lst_user.selectedItem.id}}, {{Select1.selectedOptionValue}}, CURRENT_TIMESTAMP  );

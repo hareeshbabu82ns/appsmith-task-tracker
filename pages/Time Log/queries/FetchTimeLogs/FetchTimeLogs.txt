@@ -1,0 +1,22 @@
+{
+	time_log {
+		id
+		task {
+			id
+			title
+		}
+		user_id {
+			id
+			email
+		}
+	}
+	__type(name:"time_log"){
+		fields{
+			name
+			type {
+				name
+				kind
+			}
+		}
+	}
+}

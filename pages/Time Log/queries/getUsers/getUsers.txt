@@ -1,0 +1,1 @@
+select * from employee_details limit 10 offset {{ (lst_user.pageNo - 1) * lst_user.pageSize }}

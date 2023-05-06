@@ -1,0 +1,3 @@
+SELECT * FROM public."time_log" 
+WHERE "user_id" = {{lst_user.selectedItem.id}}::varchar
+LIMIT {{lst_user.pageSize}} OFFSET {{lst_user.pageNo - 1}};
