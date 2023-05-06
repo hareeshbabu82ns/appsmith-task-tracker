@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "DirectusHome",
+    "pageId": "Time Log",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Time Log_DirectusHome",
+  "deleted": false,
+  "gitSyncId": "6455485be668ae6910e606be_64566333bf11eb51478ddcb3"
+}

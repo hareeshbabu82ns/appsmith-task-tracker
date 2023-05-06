@@ -1,6 +1,9 @@
 {
 	time_log {
 		id
+		notes
+		date_start
+		date_end
 		task {
 			id
 			title

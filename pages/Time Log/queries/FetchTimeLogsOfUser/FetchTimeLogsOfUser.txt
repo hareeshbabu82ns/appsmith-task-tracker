@@ -1,0 +1,19 @@
+query FetchActiveTimeLogsOfUser($userId:String){
+	time_log(
+		filter: { date_end: { _null: true }, user_id: { id: { _eq: $userId } } }
+	) {
+		id
+		notes
+		date_start
+		date_end
+		user_id {
+			id
+			last_name
+			first_name
+		}
+		task {
+			id
+			title
+		}
+	}
+}

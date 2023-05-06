@@ -1,0 +1,11 @@
+query FetchActiveTimeLogsOfUser{
+	time_log(
+		filter: { date_end: { _null: true } }
+	) {
+		id
+		date_end
+		user_id {
+			id
+		}
+	}
+}

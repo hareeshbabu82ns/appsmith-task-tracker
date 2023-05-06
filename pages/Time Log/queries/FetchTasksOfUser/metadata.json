@@ -2,7 +2,7 @@
   "pluginType": "API",
   "pluginId": "graphql-plugin",
   "unpublishedAction": {
-    "name": "FetchTimeLogs",
+    "name": "FetchTasksOfUser",
     "datasource": {
       "name": "DirectusHome",
       "pluginId": "graphql-plugin",
@@ -25,7 +25,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{\n\ttime_log {\n\t\tid\n\t\tnotes\n\t\tdate_start\n\t\tdate_end\n\t\ttask {\n\t\t\tid\n\t\t\ttitle\n\t\t}\n\t\tuser_id {\n\t\t\tid\n\t\t\temail\n\t\t}\n\t}\n\t__type(name:\"time_log\"){\n\t\tfields{\n\t\t\tname\n\t\t\ttype {\n\t\t\t\tname\n\t\t\t\tkind\n\t\t\t}\n\t\t}\n\t}\n}",
+      "body": "query fetchTasks($userId:String){\n\ttasks(filter:{user_created:{id:{_eq:$userId}}}){\n\t\tid\n\t\ttitle\n\t\tdescription\n\t\tstatus\n\t\tdate_created\n\t}\n\t__type(name:\"tasks\"){\n\t\tfields{\n\t\t\tname\n\t\t\ttype {\n\t\t\t\tname\n\t\t\t\tkind\n\t\t\t}\n\t\t}\n\t}\n}",
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
@@ -33,7 +33,7 @@
           "value": true
         },
         {
-          "value": ""
+          "value": "{\n\t\"userId\": \"{{lst_user.selectedItem.id}}\"\n}"
         },
         {
           "value": {}
@@ -43,18 +43,24 @@
         "apiContentType": "application/json"
       }
     },
-    "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "executeOnLoad": true,
+    "dynamicBindingPathList": [
+      {
+        "key": "pluginSpecifiedTemplates[1].value"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "lst_user.selectedItem.id"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Time Log_FetchTimeLogs",
+  "id": "Time Log_FetchTasksOfUser",
   "deleted": false,
-  "gitSyncId": "6455485be668ae6910e606be_6455cfe4bf11eb51478ddc7d"
+  "gitSyncId": "6455485be668ae6910e606be_6455cf90bf11eb51478ddc7b"
 }

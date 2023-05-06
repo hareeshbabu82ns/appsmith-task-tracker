@@ -1,5 +1,5 @@
-{
-	tasks {
+query fetchTasks($userId:String){
+	tasks(filter:{user_created:{id:{_eq:$userId}}}){
 		id
 		title
 		description
